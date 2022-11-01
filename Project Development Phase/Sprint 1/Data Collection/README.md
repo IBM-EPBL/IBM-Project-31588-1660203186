@@ -1,1 +1,2 @@
-Data Collection
+# Data Collection
+In this, we will be collecting data for building our project. We will be creating two folders one for training and the other for testing. Images present in the training folder will be used for building the model and the testing images will be used for validating our model.
