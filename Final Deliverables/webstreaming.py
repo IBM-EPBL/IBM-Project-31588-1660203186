@@ -10,8 +10,7 @@ class Video(object):
 		self.video.set(cv2.CAP_PROP_FPS, 60)
 		self.roi_start = (50, 150)
 		self.roi_end = (250, 350)
-		self.model = load_model('asl_model.h5') # Execute Local Trained Model
-		# self.model = load_model('IBM_Communication_Model.h5') # Execute IBM Trained Model
+		self.model = load_model('aslpng1.h5')
 		self.index=['A','B','C','D','E','F','G','H','I']
 		self.y = None
 	def __del__(self):
@@ -21,7 +20,6 @@ class Video(object):
 		frame = cv2.resize(frame, (640, 480))
 		copy = frame.copy()
 		copy = copy[150:150+200,50:50+200]
-		# Prediction Start
 		cv2.imwrite('image.jpg',copy)
 		copy_img = load_img('image.jpg', target_size=(64,64))
 		x = img_to_array(copy_img)
